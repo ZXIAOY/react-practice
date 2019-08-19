@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return  (
       <div>
-        <p>react App homepage</p>
+        <p>react App 主页</p>
       </div>
     );  
   }
