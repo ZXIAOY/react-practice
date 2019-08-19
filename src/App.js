@@ -8,6 +8,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { JGActions } from './store/actions';
 
+import Login from './component/Login';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +20,7 @@ class App extends React.Component {
     return  (
       <div>
         <p>react App 主页</p>
+        <Login></Login>
       </div>
     );  
   }
@@ -32,4 +35,4 @@ class App extends React.Component {
 // });
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App);
-export App;
+export default App;

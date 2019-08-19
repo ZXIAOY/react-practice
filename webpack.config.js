@@ -6,8 +6,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
 
+
+//选择环境
+let environment;
+if(process.env.env == 'dev') {
+  environment = 'development';
+} else {
+  environment = 'production';
+}
+
 module.exports = {
-  mode: 'production',    // 开发模式development | 生产模式production
+  mode: environment,    // 开发模式development | 生产模式production
   optimization: {
     minimizer: [
       new UglifyJSPlugin({
@@ -22,7 +31,7 @@ module.exports = {
     port: 8080,
     open: true,
     progress: true,
-    contentBase: './dist'
+    contentBase: './dist',
   },
   entry: {
     App: './src/index.js',
